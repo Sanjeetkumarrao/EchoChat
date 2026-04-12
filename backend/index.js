@@ -1,6 +1,11 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+if (!process.env.JWT_SECRET) {
+    console.error("FATAL ERROR: JWT_SECRET is not defined");
+    process.exit(1);
+}
+
 import app from "./app.js";
 import connectDB from './src/config/db.js';
 
