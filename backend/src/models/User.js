@@ -16,11 +16,23 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        minlength: 6
+        minlength: 8,
+        select: false
     },
     profilePic: {
         type: String,
         default: ""
+    },
+    bio: {
+        type: String,
+        default: ""
+    },
+    lastSeen: {
+        type: Date
+    },
+    isOnline: {
+        type: Boolean,
+        default: false
     }
 }, {
     timestamps: true
