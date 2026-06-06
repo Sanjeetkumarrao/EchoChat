@@ -27,7 +27,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 8,
-        select: false
+        select: false,
+        trim: true
     },
     profilePhoto: {
         type: String,
@@ -52,7 +53,7 @@ const userSchema = new mongoose.Schema({
         type: String
     },
     verificationTokenExpiry: {
-        type: Date
+        type: Date,
     }
 }, {
     timestamps: true
